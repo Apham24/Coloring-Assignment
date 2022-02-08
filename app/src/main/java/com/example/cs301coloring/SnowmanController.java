@@ -3,11 +3,12 @@ Last Updated 2/7/2022
 * */
 package com.example.cs301coloring;
 
-import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
 /**
  External Citation
  Date: 07 September 2022
@@ -18,8 +19,10 @@ import android.widget.TextView;
  */
 public class SnowmanController implements View.OnTouchListener, SeekBar.OnSeekBarChangeListener{
     SnowmanView snowView;
-    private TextView tV;
-    private SeekBar s1,s2,s3;
+    private final TextView tV;
+    private final SeekBar s1;
+    private final SeekBar s2;
+    private final SeekBar s3;
 
     //controllor constructor
     public SnowmanController(SnowmanView snowView,TextView tv,SeekBar seek1,SeekBar seek2, SeekBar seek3){
@@ -179,7 +182,7 @@ public class SnowmanController implements View.OnTouchListener, SeekBar.OnSeekBa
                 return butt;
             }
         }
-        return null;
+        return new hitBox(0,0,0,0,0,0,0,"none",new Paint());
     }
 
     @Override
